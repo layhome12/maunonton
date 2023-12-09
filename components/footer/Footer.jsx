@@ -1,5 +1,5 @@
 import Image from "next/image";
-import FeatherIcon from "../icons/FeatherIcon";
+import logo from "@/assets/image/logo/logo.png";
 
 const Footer = () => {
   return (
@@ -8,9 +8,7 @@ const Footer = () => {
         <aside>
           <div className="w-[220px] h-[75px] relative">
             <Image
-              src={
-                "http://192.168.0.3/pudidi-stream/public/identitas_web_img/1638977165_d1f68f9db48bc782537a.png"
-              }
+              src={logo}
               alt="logo.jpg"
               sizes="100%"
               priority

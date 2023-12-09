@@ -4,6 +4,7 @@ import Image from "next/image";
 import FeatherIcon from "../icons/FeatherIcon";
 import Link from "next/link";
 import { useState } from "react";
+import logo from "@/assets/image/logo/logo.png";
 
 const Sidebar = () => {
   const [expandSearch, setExpandSearch] = useState(false);
@@ -36,9 +37,7 @@ const Sidebar = () => {
           </div>
           <div className="w-[165px] h-[55px] relative">
             <Image
-              src={
-                "http://192.168.0.3/pudidi-stream/public/identitas_web_img/1638977165_d1f68f9db48bc782537a.png"
-              }
+              src={logo}
               alt="logo.jpg"
               sizes="100%"
               priority
@@ -47,8 +46,10 @@ const Sidebar = () => {
             />
           </div>
         </div>
-        <div className={`navbar-center ${!expandNav && "hidden"} lg:flex lg:grow`}>
-          <ul className="menu menu-vertical lg:menu-horizontal px-1 gap-3 lg:gap-5">
+        <div
+          className={`navbar-center ${!expandNav && "hidden"} lg:flex lg:grow`}
+        >
+          <ul className="menu menu-vertical lg:menu-horizontal px-1 gap-3 lg:gap-5 z-50">
             <li>
               <a className="text-[14px] font-medium nav-link">Home</a>
             </li>
@@ -69,7 +70,7 @@ const Sidebar = () => {
                 <summary className="text-[14px] font-medium nav-link">
                   Lainya
                 </summary>
-                <ul className="p-2 bg-transparent lg:w-[250px] lg:bg-[#1c253a]">
+                <ul className="p-2 bg-transparent lg:w-[250px] lg:bg-[#1c253a] z-50">
                   <li>
                     <a>Sub Menu 1</a>
                   </li>
