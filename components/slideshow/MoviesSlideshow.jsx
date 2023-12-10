@@ -3,8 +3,9 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "@/assets/css/sliders.css";
+import "@/assets/css/components/sliders.css";
 import FeatherIcon from "../icons/FeatherIcon";
+import Image from "next/image";
 
 const MoviesSlideshow = ({ slides = [] }) => {
   const config = {
@@ -52,8 +53,14 @@ const MoviesSlideshow = ({ slides = [] }) => {
         return (
           <div className="px-2" key={key}>
             <div className="card w-full h-[230px] md:h-[270px] bg-base-100 shadow-xl image-full cursor-pointer">
-              <figure>
-                <img className="w-full" src={val.image} alt={val.name} />
+              <figure className="!relative">
+                <Image
+                  className="w-full"
+                  src={val.image}
+                  alt={val.name}
+                  fill
+                  sizes="100%"
+                />
               </figure>
               <div className="card-body justify-end relative">
                 <h2 className="card-title text-[25px] md:text-[30px] font-medium lg:font-normal text-white">

@@ -1,6 +1,6 @@
 "use client";
 import Select from "react-select";
-import "@/assets/css/select.css";
+import "@/assets/css/components/select.css";
 import { useId } from "react";
 
 const SelectCustom = ({

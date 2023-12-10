@@ -2,57 +2,10 @@ import MoviesSlideshow from "@/components/slideshow/MoviesSlideshow";
 import SelectCustom from "@/components/select/SelectCustom";
 import "@/assets/css/page/home.css";
 import TypeBar from "@/components/menu/Typebar";
+import { slideShow, genres, menus, years, movies } from "./data";
+import CardMovie from "@/components/card/CardMovie";
 
 const Home = () => {
-  const slideShow = [
-    {
-      id: 1,
-      name: "Transporter 1",
-      genre: "Action",
-      year: 2000,
-      image: "slideshow/1.png",
-    },
-    {
-      id: 2,
-      name: "Transporter 2",
-      genre: "Action",
-      year: 2000,
-      image: "slideshow/2.jpg",
-    },
-    {
-      id: 3,
-      name: "Transporter 3",
-      genre: "Action",
-      year: 2000,
-      image: "slideshow/3.jpeg",
-    },
-    {
-      id: 4,
-      name: "Rokudenashi Majutsu Koushi to Akashic Records",
-      genre: "Anime",
-      year: 2000,
-      image: "slideshow/4.jpg",
-    },
-  ];
-
-  const genres = [
-    { value: 1, label: "Action" },
-    { value: 2, label: "Anime" },
-    { value: 3, label: "Horror" },
-  ];
-
-  const years = [
-    { value: 2023, label: "2023" },
-    { value: 2022, label: "2022" },
-    { value: 2021, label: "2021" },
-  ];
-
-  const menus = [
-    { id: 1, text: "Populer" },
-    { id: 2, text: "Terbaru" },
-    { id: 3, text: "Terbaik" },
-  ];
-
   return (
     <>
       {/* Slideshow */}
@@ -75,18 +28,14 @@ const Home = () => {
             <TypeBar options={menus} selected={1} />
           </div>
         </div>
-        <div className="content-movie">
-          <div className="h-[50px] w-full bg-[#151f30] my-2"></div>
-          <div className="h-[50px] w-full bg-[#151f30] my-2"></div>
-          <div className="h-[50px] w-full bg-[#151f30] my-2"></div>
-          <div className="h-[50px] w-full bg-[#151f30] my-2"></div>
-          <div className="h-[50px] w-full bg-[#151f30] my-2"></div>
-          <div className="h-[50px] w-full bg-[#151f30] my-2"></div>
-          <div className="h-[50px] w-full bg-[#151f30] my-2"></div>
-          <div className="h-[50px] w-full bg-[#151f30] my-2"></div>
-          <div className="h-[50px] w-full bg-[#151f30] my-2"></div>
-          <div className="h-[50px] w-full bg-[#151f30] my-2"></div>
-          <div className="h-[50px] w-full bg-[#151f30] my-2"></div>
+        <div className="content-movie grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mt-8 px-2">
+          {movies.map((val, key) => {
+            return (
+              <div key={key}>
+                <CardMovie options={val} />
+              </div>
+            );
+          })}
         </div>
       </section>
     </>
