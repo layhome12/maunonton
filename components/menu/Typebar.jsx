@@ -9,7 +9,7 @@ const TypeBar = ({ options, selected = 0 }) => {
     <ul className="menu menu-horizontal bg-base-200 rounded-xl p-1">
       {options.map((val, key) => {
         return (
-          <li>
+          <li key={key}>
             <button
               className={`mx-[0.15rem] ${
                 select == val.id ? "active !text-[#2f80ed]" : ""
