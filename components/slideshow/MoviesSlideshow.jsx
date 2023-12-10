@@ -42,6 +42,10 @@ const MoviesSlideshow = ({ slides = [] }) => {
     ],
   };
 
+  const handleBookmarkClick = (id) => {
+    alert("Bookmark save " + id);
+  };
+
   return (
     <div className="container mx-auto py-5">
       <Slider {...config}>
@@ -60,7 +64,10 @@ const MoviesSlideshow = ({ slides = [] }) => {
                     <li>{val.genre}</li>
                     <li>{val.year}</li>
                   </ul>
-                  <button className="btn btn-square btn-bookmark absolute top-5 left-5 btn-sm text-[#2f80ed] hover:text-[#ffc312] rounded-lg">
+                  <button
+                    className="btn btn-square btn-bookmark absolute top-5 left-5 btn-sm text-[#2f80ed] hover:text-[#ffc312] rounded-lg"
+                    onClick={() => handleBookmarkClick(val.id)}
+                  >
                     <FeatherIcon icons={"bookmark"} width={17} />
                   </button>
                 </div>
