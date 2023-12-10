@@ -7,7 +7,7 @@ import { useCallback, useRef, useState } from "react";
 import logo from "@/assets/image/logo/logo.png";
 import ScrollTop from "../floating/ScrollTop";
 
-const Sidebar = () => {
+const Navbar = () => {
   const [expandSearch, setExpandSearch] = useState(false);
   const [expandNav, setExpandNav] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -155,4 +155,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Navbar;

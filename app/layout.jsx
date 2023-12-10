@@ -1,6 +1,6 @@
 import "@/assets/css/globals.css";
 import Footer from "@/components/footer/Footer";
-import Sidebar from "@/components/sidebar/Sidebar";
+import Navbar from "@/components/menu/Navbar";
 
 export const metadata = {
   title: "Mau Nonton",
@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Sidebar />
+        <Navbar />
         {children}
         <Footer />
       </body>

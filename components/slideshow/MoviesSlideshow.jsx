@@ -43,40 +43,38 @@ const MoviesSlideshow = ({ slides = [] }) => {
   };
 
   const handleBookmarkClick = (id) => {
-    alert("Bookmark save " + id);
+    console.log("Bookmark save", id);
   };
 
   return (
-    <div className="container mx-auto py-5">
-      <Slider {...config}>
-        {slides.map((val, key) => {
-          return (
-            <div className="px-2" key={key}>
-              <div className="card w-full h-[230px] md:h-[270px] bg-base-100 shadow-xl image-full cursor-pointer">
-                <figure>
-                  <img className="w-full" src={val.image} alt={val.name} />
-                </figure>
-                <div className="card-body justify-end relative">
-                  <h2 className="card-title text-[25px] md:text-[30px] font-medium lg:font-normal text-white">
-                    {val.name}
-                  </h2>
-                  <ul className="flex gap-3 text-[14px] text-[#eaeaea] md:mt-2">
-                    <li>{val.genre}</li>
-                    <li>{val.year}</li>
-                  </ul>
-                  <button
-                    className="btn btn-square btn-bookmark absolute top-5 left-5 btn-sm text-[#2f80ed] hover:text-[#ffc312] rounded-lg"
-                    onClick={() => handleBookmarkClick(val.id)}
-                  >
-                    <FeatherIcon icons={"bookmark"} width={17} />
-                  </button>
-                </div>
+    <Slider {...config}>
+      {slides.map((val, key) => {
+        return (
+          <div className="px-2" key={key}>
+            <div className="card w-full h-[230px] md:h-[270px] bg-base-100 shadow-xl image-full cursor-pointer">
+              <figure>
+                <img className="w-full" src={val.image} alt={val.name} />
+              </figure>
+              <div className="card-body justify-end relative">
+                <h2 className="card-title text-[25px] md:text-[30px] font-medium lg:font-normal text-white">
+                  {val.name}
+                </h2>
+                <ul className="flex gap-3 text-[14px] text-[#eaeaea] md:mt-2">
+                  <li>{val.genre}</li>
+                  <li>{val.year}</li>
+                </ul>
+                <button
+                  className="btn btn-square btn-bookmark absolute top-5 left-5 btn-sm text-[#2f80ed] hover:text-[#ffc312] rounded-lg"
+                  onClick={() => handleBookmarkClick(val.id)}
+                >
+                  <FeatherIcon icons={"bookmark"} width={17} />
+                </button>
               </div>
             </div>
-          );
-        })}
-      </Slider>
-    </div>
+          </div>
+        );
+      })}
+    </Slider>
   );
 };
 

@@ -4,7 +4,7 @@ import FeatherIcon from "../icons/FeatherIcon";
 
 const ScrollTop = ({ visiblity, onClick = () => {} }) => {
   return (
-    <div className={`fixed bottom-10 right-10 ${!visiblity && "hidden"}`}>
+    <div className={`fixed bottom-10 right-10 z-[99] ${!visiblity && "hidden"}`}>
       <button className="btn btn-circle btn-primary" onClick={onClick}>
         <FeatherIcon icons={"arrow-up"} width={20} />
       </button>
