@@ -17,7 +17,7 @@ const Home = () => {
 
       {/* Movie List */}
       <section className="movies-list mb-5 container mx-auto">
-        <div className="sticky-header w-full bg-[#151f30] md:rounded-[8px] grid grid-cols-12 py-5 px-4 gap-3 items-center">
+        <div className="sticky-header w-full bg-[#151f30] md:rounded-[8px] grid grid-cols-12 py-5 px-4 gap-3 items-center !z-10">
           <div className="col-span-6 md:col-span-3 lg:col-span-2">
             <SelectCustom options={genres} placeholder="Semua Genre" />
           </div>

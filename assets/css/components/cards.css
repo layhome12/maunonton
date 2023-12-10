@@ -1,0 +1,59 @@
+.card-movie img {
+  transition: 0.5s;
+}
+
+.card-movie .floating .player-icon {
+  stroke: white;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.card-movie .floating .btn-bookmark,
+.card-movie .floating .rating-box {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.card-movie:hover img {
+  transform: scale(1.1);
+  filter: blur(3px);
+}
+
+.card-movie:hover .floating .player-icon {
+  width: 65px;
+  height: 65px;
+  opacity: 1;
+}
+
+.card-movie:hover figure::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.8) 75%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.card-movie:hover .floating .btn-bookmark,
+.card-movie:hover .floating .rating-box {
+  opacity: 1;
+}
