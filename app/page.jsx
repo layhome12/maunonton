@@ -5,6 +5,7 @@ import TypeBar from "@/components/menu/Typebar";
 import { slideShow, genres, menus, years, movies } from "./data";
 import CardMovie from "@/components/card/CardMovie";
 import CardsSlideshow from "@/components/slideshow/CardsSlideshow";
+import ArtikelSlideshow from "@/components/slideshow/ArtikelSlideshow";
 
 const Home = () => {
   return (
@@ -43,9 +44,24 @@ const Home = () => {
       {/* Rekomendasi List */}
       <section className="rekomendasi-list bg-base-200">
         <div className="container mx-auto py-6 my-5 md:px-8">
-          <h1 className="text-[34px] text-white px-2 md:px-0">Rekomendasi</h1>
+          <h1 className="text-[30px] md:text-[34px] text-white px-2 md:px-0">
+            Rekomendasi
+          </h1>
           <div className="mt-5 md:mt-7 mb-3">
-            <CardsSlideshow slides={movies}/>
+            <CardsSlideshow slides={movies} />
+          </div>
+        </div>
+      </section>
+
+      {/* Artikel List */}
+      <section className="artikel-list">
+        <div className="container mx-auto py-6 my-5 md:px-8">
+          <h1 className="text-[30px] md:text-[34px] text-white px-3 md:px-1">
+            <span className="text-[#75b8ff]">Artikel</span> Film
+          </h1>
+          <p className="px-3 md:px-1">Daftar Artikel, Review dan Ulasan Film</p>
+          <div className="mt-5 md:mt-8 mb-3">
+            <ArtikelSlideshow slides={slideShow} />
           </div>
         </div>
       </section>

@@ -81,8 +81,8 @@ const CardsSlideshow = ({ slides = [] }) => {
     <Slider {...config}>
       {slides.map((val, key) => {
         return (
-          <div className="px-2">
-            <CardMovie options={val} key={key} />
+          <div className="px-2" key={key}>
+            <CardMovie options={val} />
           </div>
         );
       })}

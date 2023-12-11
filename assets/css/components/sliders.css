@@ -21,6 +21,9 @@
   pointer-events: none;
   border-radius: 1rem;
 }
+.slick-slider .card.card-side figure:after {
+  border-radius: 0px;
+}
 .slick-slider .card img {
   transition: 0.5s;
 }
