@@ -23,6 +23,11 @@
   transition: 0.5s;
 }
 
+.card-movie .card-title {
+  color: white;
+  transition: 0.5s;
+}
+
 .card-movie:hover img {
   transform: scale(1.1);
   filter: blur(3px);
@@ -56,4 +61,8 @@
 .card-movie:hover .floating .btn-bookmark,
 .card-movie:hover .floating .rating-box {
   opacity: 1;
+}
+
+.card-movie:hover .card-title{
+  color: #75b8ff;
 }

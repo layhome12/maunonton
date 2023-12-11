@@ -63,7 +63,7 @@ const MoviesSlideshow = ({ slides = [] }) => {
                 />
               </figure>
               <div className="card-body justify-end relative">
-                <h2 className="card-title text-[25px] md:text-[30px] font-medium lg:font-normal text-white">
+                <h2 className="card-title text-[25px] md:text-[30px] font-medium lg:font-normal text-white line-clamp-2">
                   {val.name}
                 </h2>
                 <ul className="flex gap-3 text-[14px] text-[#eaeaea] md:mt-2">

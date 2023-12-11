@@ -4,6 +4,7 @@ import "@/assets/css/page/home.css";
 import TypeBar from "@/components/menu/Typebar";
 import { slideShow, genres, menus, years, movies } from "./data";
 import CardMovie from "@/components/card/CardMovie";
+import CardsSlideshow from "@/components/slideshow/CardsSlideshow";
 
 const Home = () => {
   return (
@@ -36,6 +37,16 @@ const Home = () => {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* Rekomendasi List */}
+      <section className="rekomendasi-list bg-base-200">
+        <div className="container mx-auto py-6 my-5 md:px-8">
+          <h1 className="text-[34px] text-white px-2 md:px-0">Rekomendasi</h1>
+          <div className="mt-5 md:mt-7 mb-3">
+            <CardsSlideshow slides={movies}/>
+          </div>
         </div>
       </section>
     </>

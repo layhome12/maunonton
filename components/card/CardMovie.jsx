@@ -11,7 +11,7 @@ const CardMovie = ({ options }) => {
 
   return (
     <div className="card card-movie px-1 cursor-pointer">
-      <figure className="!relative rounded-[15px] h-[260px] lg:h-[285px]">
+      <figure className="!relative rounded-[15px] h-[260px] lg:h-[285px] 2xl:h-[340px]">
         <Image
           className="w-full"
           src={options.image}
@@ -62,7 +62,7 @@ const CardMovie = ({ options }) => {
           <li className="text-warning">{options.genre}</li>
           <li>{options.year}</li>
         </ul>
-        <h2 className="card-title font-normal text-[16px] text-white line-clamp-2">
+        <h2 className="card-title font-normal text-[16px] line-clamp-2">
           {options.name}
         </h2>
       </div>
