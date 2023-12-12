@@ -6,10 +6,11 @@ import { slideShow, genres, menus, years, movies } from "./data";
 import CardMovie from "@/components/card/CardMovie";
 import CardsSlideshow from "@/components/slideshow/CardsSlideshow";
 import ArtikelSlideshow from "@/components/slideshow/ArtikelSlideshow";
+import Layout from "@/components/layout/Layout";
 
 const Home = () => {
   return (
-    <>
+    <Layout>
       {/* Slideshow */}
       <section className="slideshow-movies mb-5">
         <div className="container mx-auto py-5">
@@ -65,7 +66,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </>
+    </Layout>
   );
 };
 

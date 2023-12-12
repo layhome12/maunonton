@@ -79,6 +79,10 @@ const ArtikelSlideshow = ({ slides = [] }) => {
     ],
   };
 
+  const handleBookmarkClick = (id) => {
+    console.log("Bookmark save", id);
+  };
+
   return (
     <Slider {...config}>
       {slides.map((val, key) => {
