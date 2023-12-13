@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "@/assets/css/components/sliders.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const PrevButton = (props) => {
   const { className, onClick } = props;
@@ -79,7 +80,8 @@ const ArtikelSlideshow = ({ slides = [] }) => {
     ],
   };
 
-  const handleBookmarkClick = (id) => {
+  const handleBookmarkClick = (e, id) => {
+    e.preventDefault();
     console.log("Bookmark save", id);
   };
 
@@ -88,35 +90,37 @@ const ArtikelSlideshow = ({ slides = [] }) => {
       {slides.map((val, key) => {
         return (
           <div className="p-3" key={key}>
-            <div className="card card-side !grid grid-cols-3 bg-[#151f30] cursor-pointer">
-              <figure className="!relative w-full h-[185px]">
-                <Image
-                  className="w-full"
-                  src={val.image}
-                  alt={val.name}
-                  fill
-                  sizes="100%"
-                />
-                <button
-                  className="btn btn-square btn-bookmark absolute top-5 left-5 btn-sm text-[#2f80ed] hover:text-[#ffc312] rounded-lg"
-                  onClick={() => handleBookmarkClick(val.id)}
-                >
-                  <FeatherIcon icons={"bookmark"} width={17} />
-                </button>
-              </figure>
-              <div className="card-body px-5 py-3 col-span-2">
-                <h2 className="card-title font-medium text-[18px] line-clamp-2">
-                  {val.name}
-                </h2>
-                <span className="text-[13px] line-clamp-5">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industrys
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
-                </span>
+            <Link href="/artikel">
+              <div className="card card-side !grid grid-cols-3 bg-[#151f30] cursor-pointer">
+                <figure className="!relative w-full h-[185px]">
+                  <Image
+                    className="w-full"
+                    src={val.image}
+                    alt={val.name}
+                    fill
+                    sizes="100%"
+                  />
+                  <button
+                    className="btn btn-square btn-bookmark absolute top-5 left-5 btn-sm text-[#2f80ed] hover:text-[#ffc312] rounded-lg"
+                    onClick={(e) => handleBookmarkClick(e, val.id)}
+                  >
+                    <FeatherIcon icons={"bookmark"} width={17} />
+                  </button>
+                </figure>
+                <div className="card-body px-5 py-3 col-span-2">
+                  <h2 className="card-title font-medium text-[18px] line-clamp-2">
+                    {val.name}
+                  </h2>
+                  <span className="text-[13px] line-clamp-5">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industrys
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book.
+                  </span>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         );
       })}

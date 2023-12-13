@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "@/assets/css/components/sliders.css";
 import FeatherIcon from "../icons/FeatherIcon";
 import Image from "next/image";
+import Link from "next/link";
 
 const MoviesSlideshow = ({ slides = [] }) => {
   const config = {
@@ -43,7 +44,8 @@ const MoviesSlideshow = ({ slides = [] }) => {
     ],
   };
 
-  const handleBookmarkClick = (id) => {
+  const handleBookmarkClick = (e, id) => {
+    e.preventDefault();
     console.log("Bookmark save", id);
   };
 
@@ -52,32 +54,34 @@ const MoviesSlideshow = ({ slides = [] }) => {
       {slides.map((val, key) => {
         return (
           <div className="px-2" key={key}>
-            <div className="card w-full h-[230px] md:h-[270px] bg-base-100 shadow-xl image-full cursor-pointer">
-              <figure className="!relative">
-                <Image
-                  className="w-full"
-                  src={val.image}
-                  alt={val.name}
-                  fill
-                  sizes="100%"
-                />
-              </figure>
-              <div className="card-body justify-end relative">
-                <h2 className="card-title text-[25px] md:text-[30px] font-medium lg:font-normal text-white line-clamp-2">
-                  {val.name}
-                </h2>
-                <ul className="flex gap-3 text-[14px] text-[#eaeaea] md:mt-2">
-                  <li>{val.genre}</li>
-                  <li>{val.year}</li>
-                </ul>
-                <button
-                  className="btn btn-square btn-bookmark absolute top-5 left-5 btn-sm text-[#2f80ed] hover:text-[#ffc312] rounded-lg"
-                  onClick={() => handleBookmarkClick(val.id)}
-                >
-                  <FeatherIcon icons={"bookmark"} width={17} />
-                </button>
+            <Link href="/play">
+              <div className="card w-full h-[230px] md:h-[270px] bg-base-100 shadow-xl image-full cursor-pointer">
+                <figure className="!relative">
+                  <Image
+                    className="w-full"
+                    src={val.image}
+                    alt={val.name}
+                    fill
+                    sizes="100%"
+                  />
+                </figure>
+                <div className="card-body justify-end relative">
+                  <h2 className="card-title text-[25px] md:text-[30px] font-medium lg:font-normal text-white line-clamp-2">
+                    {val.name}
+                  </h2>
+                  <ul className="flex gap-3 text-[14px] text-[#eaeaea] md:mt-2">
+                    <li>{val.genre}</li>
+                    <li>{val.year}</li>
+                  </ul>
+                  <button
+                    className="btn btn-square btn-bookmark absolute top-5 left-5 btn-sm text-[#2f80ed] hover:text-[#ffc312] rounded-lg"
+                    onClick={(e) => handleBookmarkClick(e, val.id)}
+                  >
+                    <FeatherIcon icons={"bookmark"} width={17} />
+                  </button>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         );
       })}

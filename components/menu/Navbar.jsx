@@ -35,7 +35,7 @@ const Navbar = () => {
 
   return (
     <>
-      <ScrollTop visiblity={showScrollTop} onClick={handleScrollTop} />
+      {/* <ScrollTop visiblity={showScrollTop} onClick={handleScrollTop} /> */}
       <header className="bg-base-200 relative" ref={headerElement}>
         <div className="navbar container justify-between py-3 lg:py-4 mx-auto">
           <div className="navbar-start w-[180px] md:w-[230px]">
@@ -60,15 +60,19 @@ const Navbar = () => {
                 </svg>
               </button>
             </div>
-            <div className="w-[165px] h-[55px] relative">
-              <Image
-                src={logo}
-                alt="logo.jpg"
-                sizes="100%"
-                priority
-                fill
-                className="object-contain"
-              />
+            <div className="">
+              <Link href="/">
+                <div className="w-[165px] h-[55px] relative">
+                  <Image
+                    src={logo}
+                    alt="logo.jpg"
+                    sizes="100%"
+                    priority
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </Link>
             </div>
           </div>
           <div
@@ -78,19 +82,40 @@ const Navbar = () => {
           >
             <ul className="menu menu-vertical lg:menu-horizontal px-1 gap-3 lg:gap-5 z-50">
               <li>
-                <a className="text-[14px] font-medium nav-link">Home</a>
+                <Link
+                  href="/populer"
+                  className="text-[14px] font-medium nav-link"
+                
+                >
+                  Populer
+                </Link>
               </li>
               <li>
-                <a className="text-[14px] font-medium nav-link">Populer</a>
+                <Link
+                  href="/terbaru"
+                  className="text-[14px] font-medium nav-link"
+                
+                >
+                  Terbaru
+                </Link>
               </li>
               <li>
-                <a className="text-[14px] font-medium nav-link">Terbaru</a>
+                <Link
+                  href="/playlist"
+                  className="text-[14px] font-medium nav-link"
+                
+                >
+                  Playlist
+                </Link>
               </li>
               <li>
-                <a className="text-[14px] font-medium nav-link">Playlist</a>
-              </li>
-              <li>
-                <a className="text-[14px] font-medium nav-link">List Genre</a>
+                <Link
+                  href="/genre"
+                  className="text-[14px] font-medium nav-link"
+                
+                >
+                  List Genre
+                </Link>
               </li>
               <li>
                 <details>
@@ -140,8 +165,9 @@ const Navbar = () => {
               </button>
             </div>
             <Link
-              href={"#"}
+              href="/login"
               className="flex text-[14px] font-medium hover:text-[#2f80ed]"
+            
             >
               Sign In
               <div className="mx-3 text-[#2f80ed]">
