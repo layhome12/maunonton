@@ -3,40 +3,16 @@
 import Image from "next/image";
 import FeatherIcon from "../icons/FeatherIcon";
 import Link from "next/link";
-import { useCallback, useRef, useState } from "react";
+import { useState } from "react";
 import logo from "@/assets/image/logo/logo.png";
-import ScrollTop from "../floating/ScrollTop";
 
 const Navbar = () => {
   const [expandSearch, setExpandSearch] = useState(false);
   const [expandNav, setExpandNav] = useState(false);
-  const [showScrollTop, setShowScrollTop] = useState(false);
-  const observer = useRef();
-
-  const handleScrollTop = (e) => {
-    e.preventDefault();
-    window.scroll({ top: 0, left: 0, behavior: "smooth" });
-  };
-
-  const headerElement = useCallback(
-    (node) => {
-      if (observer.current) observer.current.disconnect();
-      observer.current = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          setShowScrollTop(false);
-        } else {
-          if (!showScrollTop) setShowScrollTop(true);
-        }
-      });
-      if (node) observer.current.observe(node);
-    },
-    [showScrollTop]
-  );
 
   return (
     <>
-      {/* <ScrollTop visiblity={showScrollTop} onClick={handleScrollTop} /> */}
-      <header className="bg-base-200 relative" ref={headerElement}>
+      <header className="bg-base-200 relative">
         <div className="navbar container justify-between py-3 lg:py-4 mx-auto">
           <div className="navbar-start w-[180px] md:w-[230px]">
             <div className="mr-3 text-[#2f80ed] block lg:hidden">
@@ -85,7 +61,6 @@ const Navbar = () => {
                 <Link
                   href="/populer"
                   className="text-[14px] font-medium nav-link"
-                
                 >
                   Populer
                 </Link>
@@ -94,7 +69,6 @@ const Navbar = () => {
                 <Link
                   href="/terbaru"
                   className="text-[14px] font-medium nav-link"
-                
                 >
                   Terbaru
                 </Link>
@@ -103,7 +77,6 @@ const Navbar = () => {
                 <Link
                   href="/playlist"
                   className="text-[14px] font-medium nav-link"
-                
                 >
                   Playlist
                 </Link>
@@ -112,7 +85,6 @@ const Navbar = () => {
                 <Link
                   href="/genre"
                   className="text-[14px] font-medium nav-link"
-                
                 >
                   List Genre
                 </Link>
@@ -167,7 +139,6 @@ const Navbar = () => {
             <Link
               href="/login"
               className="flex text-[14px] font-medium hover:text-[#2f80ed]"
-            
             >
               Sign In
               <div className="mx-3 text-[#2f80ed]">

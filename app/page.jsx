@@ -7,10 +7,13 @@ import CardMovie from "@/components/card/CardMovie";
 import CardsSlideshow from "@/components/slideshow/CardsSlideshow";
 import ArtikelSlideshow from "@/components/slideshow/ArtikelSlideshow";
 import Layout from "@/components/layout/Layout";
+import ScrollTop from "@/components/floating/ScrollTop";
 
 const Home = () => {
   return (
     <Layout>
+      <ScrollTop />
+
       {/* Slideshow */}
       <section className="slideshow-movies mb-5">
         <div className="container mx-auto py-5">
