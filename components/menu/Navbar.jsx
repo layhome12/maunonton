@@ -3,12 +3,24 @@
 import Image from "next/image";
 import FeatherIcon from "../icons/FeatherIcon";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import logo from "@/assets/image/logo/logo.png";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [expandSearch, setExpandSearch] = useState(false);
   const [expandNav, setExpandNav] = useState(false);
+  const searchRef = useRef();
+  const router = useRouter();
+
+  const handleSearch = (e) => {
+    const value = searchRef.current.value;
+
+    if ((e.key === "Enter" || e.key == undefined) && value.trim(" ") != "") {
+      e.preventDefault();
+      router.push(`/search/${value}`);
+    }
+  };
 
   return (
     <>
@@ -119,11 +131,13 @@ const Navbar = () => {
             >
               <div className="join bg-[#151f30] w-full rounded-[16px] justify-between">
                 <input
+                  ref={searchRef}
+                  onKeyDown={handleSearch}
                   type="text"
                   placeholder="Cari.."
                   className="input text-[14px] border-0 nav-search h-[2.5rem] font-medium bg-transparent grow pr-0"
                 />
-                <button className="w-[30px] mx-2">
+                <button className="w-[30px] mx-2" onClick={handleSearch}>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z"></path>
                   </svg>
