@@ -12,7 +12,7 @@ const CardMovie = ({ options }) => {
   };
 
   return (
-    <Link href="/play">
+    <Link href={`/play/${options.id}`}>
       <div className="card card-movie px-1 cursor-pointer">
         <figure className="!relative rounded-[15px] h-[260px] lg:h-[285px] 2xl:h-[340px]">
           <Image

@@ -1,0 +1,53 @@
+.plyr--video .plyr__control--overlaid {
+  background-color: #13a5e4;
+  box-shadow: none;
+  padding: 30px;
+  transition: 0.5s ease;
+  color: #fff;
+  border: 3px solid #fff;
+  opacity: 1;
+}
+
+.plyr--video .plyr__control--overlaid:before {
+  content: "";
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  border-radius: 50%;
+  background: url("/player/play.svg") no-repeat center;
+  background-size: 20px auto;
+  z-index: 1;
+}
+
+.plyr--video .plyr__control--overlaid svg {
+  display: none;
+}
+
+.player-container .backward-button,
+.player-container .forward-button {
+  position: absolute;
+  top: 0;
+  bottom: 60px;
+  z-index: 9999;
+}
+
+.player-container .backward-button {
+  left: 0;
+}
+
+.player-container .forward-button {
+  right: 0;
+}
+
+@media (max-width: 440px) {
+  .plyr__controls__item.plyr__volume input[data-plyr="volume"] {
+    display: none;
+  }
+}

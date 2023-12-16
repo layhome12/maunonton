@@ -1,0 +1,32 @@
+.movie-player .movie-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 450px;
+  background-repeat: no-repeat !important;
+  background-position: top !important;
+  background-size: cover !important;
+  z-index: -1;
+}
+
+.movie-player .movie-cover::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(19, 23, 32, 0.6) 0%, #0f172a 100%);
+  pointer-events: none;
+}
+
+.link-trailer svg {
+  display: block;
+  stroke: #fff;
+  height: auto;
+  margin-right: 15px;
+  transition: stroke 0.5s;
+}

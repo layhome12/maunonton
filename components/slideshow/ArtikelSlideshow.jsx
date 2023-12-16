@@ -90,7 +90,7 @@ const ArtikelSlideshow = ({ slides = [] }) => {
       {slides.map((val, key) => {
         return (
           <div className="p-3" key={key}>
-            <Link href="/artikel">
+            <Link href={`/artikel/${val.id}`}>
               <div className="card card-side !grid grid-cols-3 bg-[#151f30] cursor-pointer">
                 <figure className="!relative w-full h-[185px]">
                   <Image
