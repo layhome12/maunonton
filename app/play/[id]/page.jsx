@@ -2,6 +2,9 @@ import Layout from "@/components/layout/Layout";
 import FeatherIcon from "@/components/icons/FeatherIcon";
 import "@/assets/css/page/player.css";
 import Player from "@/components/player/Player";
+import ComponentNonSsr from "@/components/ComponentNonSsr";
+import { playlist } from "@/app/data";
+import PlaylistSlideshow from "@/components/slideshow/PlaylistSlideshow";
 
 const Play = () => {
   return (
@@ -16,11 +19,12 @@ const Play = () => {
         ></div>
         <div className="container mx-auto px-5">
           <div className="grid grid-cols-12">
-            <div className="col-span-12 md:col-span-10 lg:col-span-8">
+            <div className="col-span-12 md:col-span-10 lg:col-span-9">
+              {/* Title */}
               <div className="title">
                 <div className="mb-5">
                   <a
-                    className="link-trailer flex items-center text-[18px] text-white"
+                    className="link-trailer flex items-center text-[18px] text-white w-[120px]"
                     href="#"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -81,12 +85,56 @@ const Play = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Player */}
               <div className="player">
                 <div className="mt-5">
-                  <Player />
+                  <ComponentNonSsr>
+                    <Player />
+                  </ComponentNonSsr>
                 </div>
               </div>
-              <div className="description">
+
+              {/* Tools */}
+              <div className="tools my-3">
+                <div className="flex justify-between">
+                  <a
+                    className="flex gap-2 items-center text-[14px] hover:text-[#72aeff]"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="text-[#4896ff]">
+                      <FeatherIcon icons={"download"} width={20} />
+                    </div>
+                    Download
+                  </a>
+
+                  <a
+                    className="flex gap-2 items-center text-[14px] hover:text-[#72aeff]"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="text-[#4896ff]">
+                      <FeatherIcon icons={"bookmark"} width={20} />
+                    </div>
+                    Tambah ke Favorit
+                  </a>
+                </div>
+              </div>
+
+              {/* Playlist */}
+              <div className="playlist mt-7">
+                <div className="flex gap-2 my-3">
+                  <div className="text-[#4896ff]">
+                    <FeatherIcon icons={"play"} width={22} />
+                  </div>
+                  <h1 className="text-[18px]">Playlist</h1>
+                </div>
+                <PlaylistSlideshow slides={playlist} />
+              </div>
+              <div className="description mt-5">
                 <h1>Description</h1>
               </div>
             </div>

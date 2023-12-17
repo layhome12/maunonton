@@ -114,4 +114,91 @@ const movies = [
   },
 ];
 
-export { slideShow, genres, menus, years, movies };
+const playlist = [
+  {
+    id: 1,
+    name: "EP 1",
+    duration: "23:00",
+    resolution: "1270x720",
+    image: "/thumbnail/playlist/1.jpg",
+  },
+  {
+    id: 2,
+    name: "EP 2",
+    duration: "23:00",
+    resolution: "1270x720",
+    image: "/thumbnail/playlist/2.jpg",
+  },
+  {
+    id: 3,
+    name: "EP 3",
+    duration: "23:00",
+    resolution: "1270x720",
+    image: "/thumbnail/playlist/3.jpg",
+  },
+  {
+    id: 4,
+    name: "EP 4",
+    duration: "23:00",
+    resolution: "1270x720",
+    image: "/thumbnail/playlist/4.jpg",
+  },
+  {
+    id: 5,
+    name: "EP 5",
+    duration: "23:00",
+    resolution: "1270x720",
+    image: "/thumbnail/playlist/5.jpg",
+  },
+  {
+    id: 6,
+    name: "EP 6",
+    duration: "23:00",
+    resolution: "1270x720",
+    image: "/thumbnail/playlist/6.jpg",
+  },
+  {
+    id: 7,
+    name: "EP 7",
+    duration: "23:00",
+    resolution: "1270x720",
+    image: "/thumbnail/playlist/7.jpg",
+  },
+  {
+    id: 8,
+    name: "EP 8",
+    duration: "23:00",
+    resolution: "1270x720",
+    image: "/thumbnail/playlist/8.jpg",
+  },
+  {
+    id: 9,
+    name: "EP 9",
+    duration: "23:00",
+    resolution: "1270x720",
+    image: "/thumbnail/playlist/9.jpg",
+  },
+  {
+    id: 10,
+    name: "EP 10",
+    duration: "23:00",
+    resolution: "1270x720",
+    image: "/thumbnail/playlist/10.jpg",
+  },
+  {
+    id: 11,
+    name: "EP 11",
+    duration: "23:00",
+    resolution: "1270x720",
+    image: "/thumbnail/playlist/11.jpg",
+  },
+  {
+    id: 12,
+    name: "EP 12",
+    duration: "23:00",
+    resolution: "1270x720",
+    image: "/thumbnail/playlist/12.jpg",
+  },
+];
+
+export { slideShow, genres, menus, years, movies, playlist };
