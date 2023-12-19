@@ -30,3 +30,19 @@
   margin-right: 15px;
   transition: stroke 0.5s;
 }
+
+.input-comment {
+  border-radius: 0px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.37);
+  font-size: 14px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.input-comment:focus {
+  outline: none;
+  border-bottom: 1px solid white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}

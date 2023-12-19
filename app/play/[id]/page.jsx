@@ -135,7 +135,7 @@ const Play = () => {
                 <PlaylistSlideshow slides={playlist} />
               </div>
               <div className="description mt-5">
-                <p>
+                <p className="text-[15px]">
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
                   standard dummy text ever since the 1500s, when an unknown
@@ -147,6 +147,65 @@ const Play = () => {
                   passages, and more recently with desktop publishing software
                   like Aldus PageMaker including versions of Lorem Ipsum.
                 </p>
+
+                {/* Genre */}
+                <div className="genre mt-5">
+                  <span className="font-medium text-[18px] text-white">
+                    Genre
+                  </span>
+                  <div className="mt-2">
+                    <a
+                      href="#"
+                      className="btn btn-neutral btn-sm font-normal mx-1 hover:bg-[#2f80ed] text-white"
+                    >
+                      Anime
+                    </a>
+                    <a
+                      href="#"
+                      className="btn btn-neutral btn-sm font-normal mx-1 hover:bg-[#2f80ed] text-white"
+                    >
+                      Magic
+                    </a>
+                    <a
+                      href="#"
+                      className="btn btn-neutral btn-sm font-normal mx-1 hover:bg-[#2f80ed] text-white"
+                    >
+                      Action
+                    </a>
+                  </div>
+                </div>
+
+                {/* Share */}
+                <div className="share my-7">
+                  <span className="font-medium text-[18px] text-white">
+                    Share
+                  </span>
+                  <div className="mt-2">
+                    <a
+                      href="#"
+                      className="btn btn-info btn-sm font-normal mx-1 text-white"
+                    >
+                      <FeatherIcon icons={"facebook"} width={18} />
+                      Facebook
+                    </a>
+                    <a
+                      href="#"
+                      className="btn btn-primary btn-sm font-normal mx-1 text-white"
+                    >
+                      <FeatherIcon icons={"twitter"} width={18} />
+                      Twitter
+                    </a>
+                    <a
+                      href="#"
+                      className="btn btn-accent btn-sm font-normal mx-1 text-white"
+                    >
+                      <FeatherIcon icons={"instagram"} width={18} />
+                      Instagram
+                    </a>
+                  </div>
+                </div>
+
+                <hr className="border-gray-800" />
               </div>
             </div>
           </div>
@@ -154,15 +213,52 @@ const Play = () => {
       </section>
 
       {/* Comments and Items*/}
-      <section className="comments">
-        <div>
-          <h5>Comments</h5>
+      <section className="comments mb-5">
+        <div className="container mx-auto px-5">
+          <h5 className="text-[22px] text-white">
+            Komentar
+            <div className="badge badge-primary ml-3">+99</div>
+          </h5>
+
+          <div className="grid grid-cols-12">
+            <div className="col-span-12 md:col-span-10 lg:col-span-8">
+              <div className="comment-send mt-5 flex items-start gap-5">
+                <div className="avatar">
+                  <div className="w-[56px] mask mask-squircle">
+                    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                  </div>
+                </div>
+                <div className="grow">
+                  <div className="px-1">
+                    <input
+                      type="text"
+                      placeholder="Tambahkan komentar.."
+                      className="input w-full input-comment"
+                    />
+                  </div>
+                  <div className="flex justify-between mt-2">
+                    <button className="btn btn-circle btn-ghost btn-sm">
+                      <FeatherIcon icons={"smile"} width={20} />
+                    </button>
+                    <div>
+                      <button className="btn btn-sm btn-neutral font-normal mx-1">
+                        Batal
+                      </button>
+                      <button className="btn btn-sm btn-primary font-normal mx-1">
+                        Kirim
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Other Movie */}
       <section className="movie-other">
-        <div>
+        <div className="container mx-auto px-5">
           <h5>Other Movie</h5>
         </div>
       </section>
