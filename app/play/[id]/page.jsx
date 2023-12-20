@@ -3,8 +3,10 @@ import FeatherIcon from "@/components/icons/FeatherIcon";
 import "@/assets/css/page/player.css";
 import Player from "@/components/player/Player";
 import ComponentNonSsr from "@/components/ComponentNonSsr";
-import { playlist } from "@/app/data";
+import { playlist, movies } from "@/app/data";
 import PlaylistSlideshow from "@/components/slideshow/PlaylistSlideshow";
+import Comment from "@/components/comments/Comment";
+import CardMovie from "@/components/card/CardMovie";
 
 const Play = () => {
   return (
@@ -213,43 +215,26 @@ const Play = () => {
       </section>
 
       {/* Comments and Items*/}
-      <section className="comments mb-5">
+      <section className="comment-items mb-5">
         <div className="container mx-auto px-5">
-          <h5 className="text-[22px] text-white">
-            Komentar
-            <div className="badge badge-primary ml-3">+99</div>
-          </h5>
-
-          <div className="grid grid-cols-12">
+          <div className="grid grid-cols-12 lg:gap-10">
             <div className="col-span-12 md:col-span-10 lg:col-span-8">
-              <div className="comment-send mt-5 flex items-start gap-5">
-                <div className="avatar">
-                  <div className="w-[56px] mask mask-squircle">
-                    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                  </div>
-                </div>
-                <div className="grow">
-                  <div className="px-1">
-                    <input
-                      type="text"
-                      placeholder="Tambahkan komentar.."
-                      className="input w-full input-comment"
-                    />
-                  </div>
-                  <div className="flex justify-between mt-2">
-                    <button className="btn btn-circle btn-ghost btn-sm">
-                      <FeatherIcon icons={"smile"} width={20} />
-                    </button>
-                    <div>
-                      <button className="btn btn-sm btn-neutral font-normal mx-1">
-                        Batal
-                      </button>
-                      <button className="btn btn-sm btn-primary font-normal mx-1">
-                        Kirim
-                      </button>
+              <h5 className="text-[22px] text-white">
+                Komentar
+                <div className="badge badge-primary ml-3">+99</div>
+              </h5>
+              <Comment />
+            </div>
+            <div className="col-span-12 md:col-span-12 lg:col-span-4 pt-6 lg:pt-0">
+              <h5 className="text-[20px] text-white">Tonton Lainya</h5>
+              <div className="grid grid-cols-8 gap-4 mt-7">
+                {movies.map((val, key) => {
+                  return (
+                    <div className="col-span-4 md:col-span-2 lg:col-span-4">
+                      <CardMovie options={val} key={key} />
                     </div>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
             </div>
           </div>
