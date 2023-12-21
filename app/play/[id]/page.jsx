@@ -215,7 +215,7 @@ const Play = () => {
       </section>
 
       {/* Comments and Items*/}
-      <section className="comment-items mb-5">
+      <section className="comment-items mb-10">
         <div className="container mx-auto px-5">
           <div className="grid grid-cols-12 lg:gap-10">
             <div className="col-span-12 md:col-span-10 lg:col-span-8">
@@ -230,21 +230,14 @@ const Play = () => {
               <div className="grid grid-cols-8 gap-4 mt-7">
                 {movies.map((val, key) => {
                   return (
-                    <div className="col-span-4 md:col-span-2 lg:col-span-4">
-                      <CardMovie options={val} key={key} />
+                    <div key={key} className="col-span-4 md:col-span-2 lg:col-span-4">
+                      <CardMovie options={val} />
                     </div>
                   );
                 })}
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Other Movie */}
-      <section className="movie-other">
-        <div className="container mx-auto px-5">
-          <h5>Other Movie</h5>
         </div>
       </section>
     </Layout>
