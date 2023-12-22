@@ -1,10 +1,17 @@
 import "@/assets/css/components/cards.css";
+import Image from "next/image";
 
 const CardGenre = ({ options }) => {
   return (
     <div className="card card-genre cursor-pointer shadow-xl image-full h-[130px] md:h-[175px]">
-      <figure>
-        <img className="w-full h-full" src={options.image} alt="Shoes" />
+      <figure className="!relative">
+        <Image
+          className="w-full"
+          src={options.image}
+          alt={options.image}
+          fill
+          sizes="100%"
+        />
       </figure>
       <div className="card-body justify-end p-6">
         <div className="flex justify-between items-end gap-4">

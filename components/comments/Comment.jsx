@@ -1,4 +1,5 @@
 import FeatherIcon from "@/components/icons/FeatherIcon";
+import Image from "next/image";
 
 const Comment = () => {
   return (
@@ -6,7 +7,13 @@ const Comment = () => {
       <div className="comment-send mt-5 flex items-start gap-5">
         <div className="avatar">
           <div className="w-[56px] mask mask-squircle">
-            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+            <Image
+              className="w-full"
+              src="/player/user-img.jpeg"
+              alt={"user-img.jpeg"}
+              fill
+              sizes="100%"
+            />
           </div>
         </div>
         <div className="grow">
@@ -38,7 +45,13 @@ const Comment = () => {
             <div className="user-info flex gap-4">
               <div className="avatar">
                 <div className="w-[50px] mask mask-squircle">
-                  <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                  <Image
+                    className="w-full"
+                    src="/player/user-img.jpeg"
+                    alt={"user-img.jpeg"}
+                    fill
+                    sizes="100%"
+                  />
                 </div>
               </div>
               <div className="grow profile-info">
@@ -48,7 +61,7 @@ const Comment = () => {
             </div>
             <div className="user-comment mt-3 text-[15px]">
               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
+              industry. Lorem Ipsum has been the industrys standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book.
             </div>
@@ -62,7 +75,9 @@ const Comment = () => {
               <button className="btn btn-circle btn-ghost btn-sm">
                 <FeatherIcon icons={"thumbs-down"} width={20} height={20} />
               </button>
-              <button className="btn btn-ghost btn-active btn-sm font-normal">Balas</button>
+              <button className="btn btn-ghost btn-active btn-sm font-normal">
+                Balas
+              </button>
             </div>
           </div>
         </div>
