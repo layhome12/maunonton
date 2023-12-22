@@ -30,9 +30,9 @@ const slideShow = [
 ];
 
 const genres = [
-  { value: 1, label: "Action" },
-  { value: 2, label: "Anime" },
-  { value: 3, label: "Horror" },
+  { value: 1, label: "Anime", image: "/genre/1.jpg", ammount: 20 },
+  { value: 2, label: "Action", image: "/genre/2.jpg", ammount: 80 },
+  { value: 3, label: "Horror", image: "/genre/3.jpg", ammount: 10 },
 ];
 
 const years = [

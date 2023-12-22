@@ -98,7 +98,7 @@ const Navbar = () => {
                   href="/genre"
                   className="text-[14px] font-medium nav-link"
                 >
-                  List Genre
+                  Genre
                 </Link>
               </li>
               <li>

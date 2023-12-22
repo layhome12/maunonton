@@ -1,4 +1,5 @@
-.card-movie img {
+.card-movie img,
+.card-genre img {
   transition: 0.5s;
 }
 
@@ -63,6 +64,33 @@
   opacity: 1;
 }
 
-.card-movie:hover .card-title{
+.card-movie:hover .card-title {
   color: #75b8ff;
+}
+
+/* Genre */
+
+.card.card-genre.image-full:before {
+  opacity: 0.7;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.8) 75%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  transition: 0.5s;
+}
+
+.card-genre:hover img {
+  transform: scale(1.1);
+}
+
+.card.card-genre:hover:before {
+  opacity: 0.8;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.8) 75%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
 }
