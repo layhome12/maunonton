@@ -6,7 +6,7 @@ const Comment = () => {
     <div className="comment">
       <div className="comment-send mt-5 flex items-start gap-5">
         <div className="avatar">
-          <div className="w-[56px] mask mask-squircle">
+          <div className="w-[56px] mask mask-squircle relative">
             <Image
               className="w-full"
               src="/player/user-img.jpeg"
@@ -44,7 +44,7 @@ const Comment = () => {
           <div className="card-body p-4">
             <div className="user-info flex gap-4">
               <div className="avatar">
-                <div className="w-[50px] mask mask-squircle">
+                <div className="w-[50px] mask mask-squircle relative">
                   <Image
                     className="w-full"
                     src="/player/user-img.jpeg"
