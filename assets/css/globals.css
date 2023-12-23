@@ -169,6 +169,13 @@
   background-color: #0c1425;
 }
 
+.sticky-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -6px;
+  z-index: 1;
+}
+
 @media (max-width: 968px) {
   .navbar-center .menu {
     position: absolute;

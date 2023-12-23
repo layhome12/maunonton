@@ -71,18 +71,18 @@ const Navbar = () => {
             <ul className="menu menu-vertical lg:menu-horizontal px-1 gap-3 lg:gap-5 z-50">
               <li>
                 <Link
-                  href="/populer"
+                  href="/genre"
                   className="text-[14px] font-medium nav-link"
                 >
-                  Populer
+                  Genre
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/terbaru"
+                  href="/populer"
                   className="text-[14px] font-medium nav-link"
                 >
-                  Terbaru
+                  Populer
                 </Link>
               </li>
               <li>
@@ -94,38 +94,33 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/genre"
-                  className="text-[14px] font-medium nav-link"
-                >
-                  Genre
-                </Link>
-              </li>
-              <li>
                 <details>
                   <summary className="text-[14px] font-medium nav-link">
                     Lainya
                   </summary>
                   <ul className="p-2 bg-transparent lg:w-[250px] lg:bg-[#1c253a] z-50">
                     <li>
-                      <a>Sub Menu 1</a>
+                      <a>Tentang Kami</a>
                     </li>
                     <li>
-                      <a>Sub Menu 2</a>
+                      <a>Kontak Kami</a>
+                    </li>
+                    <li>
+                      <a>Kebijakan dan Privasi</a>
                     </li>
                   </ul>
                 </details>
               </li>
             </ul>
           </div>
-          <div className="navbar-end grow md:w-[30%] md:justify-start gap-3">
+          <div className="navbar-end grow md:w-[30%] md:justify-end gap-3">
             <div className="mx-3 text-[#2f80ed] block md:hidden">
               <button className="mt-1" onClick={() => setExpandSearch(true)}>
                 <FeatherIcon icons={"search"} width={20} />
               </button>
             </div>
             <div
-              className={`search-nav absolute left-0 right-0 top-0 bottom-0 w-full h-full flex items-center px-3 md:grow md:w-auto md:relative md:block ${
+              className={`search-nav absolute left-0 right-0 top-0 bottom-0 w-full h-full flex items-center px-3 md:grow md:w-auto md:relative md:block md:max-w-[320px] ${
                 !expandSearch && "hidden"
               }`}
             >

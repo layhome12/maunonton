@@ -42,7 +42,7 @@ const years = [
 ];
 
 const menus = [
-  { id: 1, text: "Populer" },
+  { id: 1, text: "Terpopuler" },
   { id: 2, text: "Terbaru" },
   { id: 3, text: "Terbaik" },
 ];
