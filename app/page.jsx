@@ -8,8 +8,10 @@ import CardsSlideshow from "@/components/slideshow/CardsSlideshow";
 import ArtikelSlideshow from "@/components/slideshow/ArtikelSlideshow";
 import Layout from "@/components/layout/Layout";
 import ScrollTop from "@/components/floating/ScrollTop";
+import Movies from "@/models/Movies";
 
 const Home = () => {
+
   return (
     <Layout>
       <ScrollTop />

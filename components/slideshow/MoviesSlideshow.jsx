@@ -53,7 +53,7 @@ const MoviesSlideshow = ({ slides = [] }) => {
     <Slider {...config}>
       {slides.map((val, key) => {
         return (
-          <div className="px-2" key={key}>
+          <div className="px-3" key={key}>
             <Link href={`/play/${val.id}`}>
               <div className="card w-full h-[230px] md:h-[270px] bg-base-100 shadow-xl image-full cursor-pointer">
                 <figure className="!relative">
